@@ -1,9 +1,3 @@
-za\ac\nwu\ac\web\sb\controller\AccountRewardController.class
-za\ac\nwu\ac\web\sb\config\WebConfig.class
-za\ac\nwu\ac\web\sb\controller\AccountGameBoardController.class
-za\ac\nwu\ac\web\sb\controller\AccountGameTileController.class
 za\ac\nwu\ac\web\sb\config\SwaggerConfiguration.class
-za\ac\nwu\ac\web\sb\controller\AccountTypeController.class
-za\ac\nwu\ac\web\sb\controller\AccountMilesController.class
-za\ac\nwu\ac\web\sb\controller\AccountMemberController.class
+za\ac\nwu\ac\web\sb\config\WebConfig.class
 za\ac\nwu\ac\web\sb\RestServiceApplication.class
