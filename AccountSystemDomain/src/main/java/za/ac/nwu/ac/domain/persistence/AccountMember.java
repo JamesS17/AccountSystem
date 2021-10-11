@@ -11,26 +11,19 @@ import java.util.Set;
 public class AccountMember implements Serializable{
 
     //private static final long serialVersionUID = ;
-
-
-
+    private static final long serialVersionUID = 9011408239159707013L;
     private Long MemID;
     private String MemName;
     private String MemSurname;
-    private LocalDate MemDOB;
-    private String MemEmail;
-    private String MemNumber;
-    private Set<AccountReward> accountRewards;
-    private Set<AccountMiles> accountMiles;
-    private Set<AccountGameBoard> accountGameBoards;
+    private LocalDate MemDate;
+    private Long MemMiles;
 
-    public AccountMember(Long memID, String memName, String memSurname, LocalDate memDOB, String memEmail, String memNumber) {
+    public AccountMember(Long memID, String memName, String memSurname, LocalDate memDate, Long memMiles) {
         MemID = memID;
         MemName = memName;
         MemSurname = memSurname;
-        MemDOB = memDOB;
-        MemEmail = memEmail;
-        MemNumber = memNumber;
+        MemDate = memDate;
+        MemMiles = memMiles;
     }
 
     public AccountMember() {
@@ -63,56 +56,21 @@ public class AccountMember implements Serializable{
     public void setMemSurname(String memSurname) {
         MemSurname = memSurname;
     }
-    @Column(name = "MemDOB")
-    public LocalDate getMemDOB() {
-        return MemDOB;
+    @Column(name = "MemDate")
+    public LocalDate getMemDate() {
+        return MemDate;
     }
 
-    public void setMemDOB(LocalDate memDOB) {
-        MemDOB = memDOB;
+    public void setMemDate(LocalDate memDate) {
+        MemDate = memDate;
+    }
+    @Column(name = "MemMiles")
+    public Long getMemMiles() {
+        return MemMiles;
     }
 
-    @Column(name = "MemEmail")
-    public String getMemEmail() {
-        return MemEmail;
-    }
-
-    public void setMemEmail(String memEmail) {
-        MemEmail = memEmail;
-    }
-
-    @Column(name = "MemNumber")
-    public String getMemNumber() {
-        return MemNumber;
-    }
-
-    public void setMemNumber(String memNumber) {
-        MemNumber = memNumber;
-    }
-
-    @OneToMany(targetEntity = AccountReward.class, fetch = FetchType.LAZY, mappedBy = "MemID", orphanRemoval = true, cascade = CascadeType.PERSIST)
-    public Set<AccountReward> getAccountRewards() {
-        return accountRewards;
-    }
-
-    public void setAccountRewards(Set<AccountReward> accountRewards){
-        this.accountRewards = accountRewards;
-    }
-
-    @OneToOne(targetEntity = AccountGameBoard.class, fetch = FetchType.LAZY, mappedBy = "MemID", orphanRemoval = true, cascade = CascadeType.PERSIST)
-    public Set<AccountGameBoard> getGameBoards() {
-        return accountGameBoards;
-    }
-    public void setAccountGameBoards(Set<AccountGameBoard> accountGameBoards){
-        this.accountGameBoards = accountGameBoards;
-    }
-
-    @OneToOne(targetEntity = AccountMiles.class, fetch = FetchType.LAZY, mappedBy = "MemID", orphanRemoval = true, cascade = CascadeType.PERSIST)
-    public Set<AccountMiles> getAccountMiles() {
-        return accountMiles;
-    }
-    public void setAccountMiles(Set<AccountMiles> accountMiles){
-        this.accountMiles = accountMiles;
+    public void setMemMiles(Long memMiles) {
+        MemMiles = memMiles;
     }
 
 
@@ -121,12 +79,12 @@ public class AccountMember implements Serializable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountMember that = (AccountMember) o;
-        return Objects.equals(MemID, that.MemID) && Objects.equals(MemName, that.MemName) && Objects.equals(MemSurname, that.MemSurname) && Objects.equals(MemDOB, that.MemDOB) && Objects.equals(MemEmail, that.MemEmail) && Objects.equals(MemNumber, that.MemNumber);
+        return Objects.equals(MemID, that.MemID) && Objects.equals(MemName, that.MemName) && Objects.equals(MemSurname, that.MemSurname) && Objects.equals(MemDate, that.MemDate) && Objects.equals(MemMiles, that.MemMiles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(MemID, MemName, MemSurname, MemDOB, MemEmail, MemNumber);
+        return Objects.hash(MemID, MemName, MemSurname, MemDate, MemMiles);
     }
 
     @Override
@@ -135,9 +93,8 @@ public class AccountMember implements Serializable{
                 "MemID=" + MemID +
                 ", MemName='" + MemName + '\'' +
                 ", MemSurname='" + MemSurname + '\'' +
-                ", MemDOB=" + MemDOB +
-                ", MemEmail='" + MemEmail + '\'' +
-                ", MemNumber='" + MemNumber + '\'' +
+                ", MemDate=" + MemDate +
+                ", MemMiles=" + MemMiles +
                 '}';
     }
 }
