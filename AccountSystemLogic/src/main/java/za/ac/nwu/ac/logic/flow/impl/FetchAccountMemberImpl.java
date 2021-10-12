@@ -12,12 +12,12 @@ import java.util.List;
 
 @Transactional
 @Component
-public class FetchaccountMemberImpl implements FetchMemberFlow {
+public class FetchAccountMemberImpl implements FetchMemberFlow {
 
     private final AccountMemberTranslator accountMemberTranslator;
 
     @Autowired
-    public FetchaccountMemberImpl(AccountMemberTranslator accountMemberTranslator){
+    public FetchAccountMemberImpl(AccountMemberTranslator accountMemberTranslator){
         this.accountMemberTranslator = accountMemberTranslator;
     }
 
@@ -25,5 +25,10 @@ public class FetchaccountMemberImpl implements FetchMemberFlow {
     public List<AccountMemberDto> getAllAccountMembers()
     {
         return accountMemberTranslator.getAllAccountMembers();
+    }
+
+    @Override
+    public AccountMemberDto getAccountMemberByID(Long memID){
+        return accountMemberTranslator.getAccountMemberByIDQuery(memID);
     }
 }

@@ -7,6 +7,6 @@ import java.util.List;
 public interface FetchMemberFlow {
     List<AccountMemberDto> getAllAccountMembers();
 
-
+    AccountMemberDto getAccountMemberByID(Long MemID);
 
 }

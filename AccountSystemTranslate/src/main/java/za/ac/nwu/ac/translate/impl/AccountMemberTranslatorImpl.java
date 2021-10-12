@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountMemberDto;
 import za.ac.nwu.ac.domain.persistence.AccountMember;
-import za.ac.nwu.ac.repo.presistence.AccountMemberRepository;
+import za.ac.nwu.ac.repo.persistence.AccountMemberRepository;
 import za.ac.nwu.ac.translate.AccountMemberTranslator;
 
 import java.util.ArrayList;
@@ -38,6 +38,16 @@ public class AccountMemberTranslatorImpl implements AccountMemberTranslator {
     public AccountMemberDto create(AccountMemberDto accountMemberDto){
         try{
             AccountMember accountMember = accountMemberRepository.save(accountMemberDto.getAccountMember());
+            return new AccountMemberDto(accountMember);
+        } catch (Exception e){
+            throw new RuntimeException("Unable to save to Database!",e);
+        }
+    }
+
+    @Override
+    public AccountMemberDto getAccountMemberByIDQuery(Long memID){
+        try{
+            AccountMember accountMember = accountMemberRepository.getAccountMemberByIDQuery(memID);
             return new AccountMemberDto(accountMember);
         } catch (Exception e){
             throw new RuntimeException("Unable to save to Database!",e);

@@ -72,9 +72,9 @@ public class AccountMemberDto implements Serializable {
         return this;
     }
     @ApiModelProperty(position = 3,
-            value = "AccountMember Surname",
+            value = "AccountMember MemSurname",
             name = "Surname",
-            notes = "Name of member",
+            notes = "SurName of member",
             dataType = "java.lang.String",
             example = "Smith",
             required = true)
@@ -90,7 +90,7 @@ public class AccountMemberDto implements Serializable {
             value = "AccountMember Creation Date",
             name = "CreationDate",
             notes = "The date on which the account was created",
-            dataType = "java.lang.String",
+            dataType = "java.lang.LocalDate",
             example = "2021-01-01",
             allowEmptyValue = true,
             required = false)
