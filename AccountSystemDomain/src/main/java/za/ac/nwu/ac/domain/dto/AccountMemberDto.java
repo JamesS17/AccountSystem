@@ -41,12 +41,12 @@ public class AccountMemberDto implements Serializable {
     }
 
     @ApiModelProperty(position = 1,
-    value = "AccountMember MemID",
-    name = "MemID",
-    notes = "Uniquely IDs the members account",
-    dataType = "java.lang.Long",
-    example = "123",
-    required = true)
+            value = "AccountMember MemID",
+            name = "MemID",
+            notes = "Uniquely IDs the members account",
+            dataType = "java.lang.Long",
+            example = "123",
+            required = true)
     public Long getMemID() {
         return MemID;
     }
@@ -92,8 +92,7 @@ public class AccountMemberDto implements Serializable {
             notes = "The date on which the account was created",
             dataType = "java.lang.LocalDate",
             example = "2021-01-01",
-            allowEmptyValue = true,
-            required = false)
+            required = true)
     public LocalDate getMemDate() {
         return MemDate;
     }

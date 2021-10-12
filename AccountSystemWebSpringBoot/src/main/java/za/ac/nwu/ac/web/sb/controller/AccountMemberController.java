@@ -58,26 +58,7 @@ public class AccountMemberController {
         GeneralResponse<AccountMemberDto> response = new GeneralResponse<>(true, accountMemberResponse);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
-/*
-    @GetMapping("{MemID}")
-    @ApiOperation(value = "Wys kak", notes = "Is kak")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Account member Found"),
-            @ApiResponse(code = 400, message = "Bad Request", response = GeneralResponse.class),
-            @ApiResponse(code = 404, message = "Not found", response = GeneralResponse.class),
-            @ApiResponse(code = 500, message = "Internal Server Error", response = GeneralResponse.class)
-    })
-    public ResponseEntity<GeneralResponse<AccountMemberDto>> getAccountMember(
-            @ApiParam(value = "The MemID",
-            example = "123",
-            name = "MemID",
-            required = true)
-            @PathVariable("MemID") final Long memID){
-        AccountMemberDto accountMember = fetchMemberFlow.getAccountMemberByID(memID);
-        GeneralResponse<AccountMemberDto> response = new GeneralResponse<>(true,accountMember);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-*/
+
 
 }
 
