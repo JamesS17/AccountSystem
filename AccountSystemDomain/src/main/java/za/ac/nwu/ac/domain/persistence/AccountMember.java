@@ -30,9 +30,9 @@ public class AccountMember implements Serializable{
     }
 
     @Id
-    @SequenceGenerator(name = "MemID_value", sequenceName = "CMPG323.MemID_value", allocationSize = 1)
+    @SequenceGenerator(name = "MemID_value", sequenceName = "HR.MemID_value", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MemID_value")
-    @Column(name = "MemID")
+    @Column(name = "MEMID")
     public Long getMemID() {
         return MemID;
     }
@@ -40,7 +40,7 @@ public class AccountMember implements Serializable{
     public void setMemID(Long memID) {
         MemID = memID;
     }
-    @Column(name = "MemName")
+    @Column(name = "MEMNAME")
     public String getMemName() {
         return MemName;
     }
@@ -48,7 +48,7 @@ public class AccountMember implements Serializable{
     public void setMemName(String memName) {
         MemName = memName;
     }
-    @Column(name = "MemSurname")
+    @Column(name = "MEMSURNAME")
     public String getMemSurname() {
         return MemSurname;
     }
@@ -56,7 +56,7 @@ public class AccountMember implements Serializable{
     public void setMemSurname(String memSurname) {
         MemSurname = memSurname;
     }
-    @Column(name = "MemDate")
+    @Column(name = "MEMDATE")
     public LocalDate getMemDate() {
         return MemDate;
     }
@@ -64,7 +64,7 @@ public class AccountMember implements Serializable{
     public void setMemDate(LocalDate memDate) {
         MemDate = memDate;
     }
-    @Column(name = "MemMiles")
+    @Column(name = "MEMMILES")
     public Long getMemMiles() {
         return MemMiles;
     }
@@ -90,11 +90,11 @@ public class AccountMember implements Serializable{
     @Override
     public String toString() {
         return "AccountMember{" +
-                "MemID=" + MemID +
-                ", MemName='" + MemName + '\'' +
-                ", MemSurname='" + MemSurname + '\'' +
-                ", MemDate=" + MemDate +
-                ", MemMiles=" + MemMiles +
+                "MEMID=" + MemID +
+                ", MEMNAME='" + MemName + '\'' +
+                ", MEMSURNAME='" + MemSurname + '\'' +
+                ", MEMDATE=" + MemDate +
+                ", MEMMILES=" + MemMiles +
                 '}';
     }
 }

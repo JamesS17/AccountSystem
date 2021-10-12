@@ -58,7 +58,21 @@ public class AccountMemberController {
         GeneralResponse<AccountMemberDto> response = new GeneralResponse<>(true, accountMemberResponse);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
-
+/*
+    @PostMapping("")
+    @ApiOperation(value = "Creates Account Members", notes = "Creates new Account Members in DB")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Account member created succesufully", response = GeneralResponse.class),
+            @ApiResponse(code = 400, message = "Bad Request", response = GeneralResponse.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = GeneralResponse.class)})
+    public ResponseEntity<GeneralResponse<AccountMemberDto>> create(
+            @ApiParam(value = "Request body to create a new AccountMember", required = true)
+            @RequestBody AccountMemberDto accountMember) {
+        AccountMemberDto accountMemberResponse = createMemberFlow.create(accountMember);
+        GeneralResponse<AccountMemberDto> response = new GeneralResponse<>(true, accountMemberResponse);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+*/
 
 }
 

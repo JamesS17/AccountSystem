@@ -9,5 +9,5 @@ import java.util.List;
 public interface AccountMemberTranslator {
     List<AccountMemberDto> getAllAccountMembers();
     AccountMemberDto create(AccountMemberDto accountMemberDto);
-    AccountMemberDto getAccountMemberByIDQuery(Long memID);
+
 }

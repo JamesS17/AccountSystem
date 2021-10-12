@@ -27,8 +27,5 @@ public class FetchAccountMemberImpl implements FetchMemberFlow {
         return accountMemberTranslator.getAllAccountMembers();
     }
 
-    @Override
-    public AccountMemberDto getAccountMemberByID(Long memID){
-        return accountMemberTranslator.getAccountMemberByIDQuery(memID);
-    }
+
 }

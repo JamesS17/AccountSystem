@@ -11,6 +11,5 @@ import za.ac.nwu.ac.domain.persistence.AccountMember;
 @Component
 public interface AccountMemberRepository extends JpaRepository<AccountMember, Long> {
 
-    @Query(value = "SELECT at   FROM  AccountMember  at  WHERE at.memID =:memID")
-    AccountMember getAccountMemberByIDQuery(Long memID);
+
 }

@@ -44,13 +44,6 @@ public class AccountMemberTranslatorImpl implements AccountMemberTranslator {
         }
     }
 
-    @Override
-    public AccountMemberDto getAccountMemberByIDQuery(Long memID){
-        try{
-            AccountMember accountMember = accountMemberRepository.getAccountMemberByIDQuery(memID);
-            return new AccountMemberDto(accountMember);
-        } catch (Exception e){
-            throw new RuntimeException("Unable to save to Database!",e);
-        }
-    }
+
+
 }
